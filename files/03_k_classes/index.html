@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Classes: Kristy Notes</title>
+
+    <!--
+    When using multiple JS files, they each need to be imported into the
+    HMTL file and set as type="module".
+
+    However, recall when you do this you need to understand a few differences
+    that apply to JS files loaded as "modules."
+
+    JS modules are automatically "deferred", so you don't need to add that property.
+    They are loaded an executed in the order they appear on the page. 
+
+    Also, module-scoped variables don't attach to the window, so you cannot access
+    module variables or functions directly fromteh console. 
+    
+    Hopefully he will talk more about this bc I am a lil confused. 
+    -->
+    <script type="module" src="Backpack.js"></script>
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>JS Classes</h1>
+    <p>Keep your JS classes in a separate JS file from your main script.</p>
+    <ul>
+      <li>In the HTML file, both scripts must be imported as "modules."</li>
+      <li>
+        In your class JS file, include your class's code. Export it at the
+        bottom of the file.
+      </li>
+      <li>
+        In your main JS file, import the class, and use it as if it was located
+        inside that file.
+      </li>
+    </ul>
+  </body>
+</html>

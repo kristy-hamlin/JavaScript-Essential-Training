@@ -1,36 +1,28 @@
-//Functions and Methods:
-//A function inside an Object is referred to as a method.
+//JS Classes
 
-const backpack = {
-  name: "Kristy's MTB bag",
-  volume: 30,
-  color: "blue",
-  //So far, we have been using the longhand syntax for writing functions,
-  //which specifically tells us we are writing a function:
-  lidOpen: false,
-  toggleLid: function (lidStatus) {
-    this.lidOpen = lidStatus;
-  },
+//Recall that JS reads from top to bottom. A conventional and legible way to
+//use classes is to keep them in a separate file. Then, import that file at the
+//top of your main JS file like so:
+import Backpack from "./Backpack.js";
+import Bike from "./Bike.js";
 
-  //However, there is a shorthand for writing functions, where you
-  //remove the function keyword:
-  strapLength: {
-    left: 20,
-    right: 20,
-  },
-  changeStrapLengths(newLeft, newRight) {
-    this.strapLength.left = newLeft;
-    this.strapLength.right = newRight;
-  },
-};
+//To use the class, you create a variable and use the new keyword along with the
+//class constructor, similar to other languages:
+const kristyMTBbag = new Backpack("Kristy's MTB bag", 60, 30, 30, false);
 
-//Let's call the methods so we can see them work:
-console.log("Left Strap before: ", backpack.strapLength.left);
-console.log("Right Strap before: ", backpack.strapLength.right);
+console.log("The MTB Backpack object: ", kristyMTBbag);
 
-//Call a function using dot notation on the object and provide the arguments:
-backpack.changeStrapLengths(5, 19);
+const kristyBike = new Bike(
+  "Kristy's Stumpy",
+  "Specialized",
+  "Stumpjumper",
+  "Pink",
+  true,
+  29,
+  29
+);
 
-//Demonstrate that the call worked (hopefully!)
-console.log("Left Strap after: ", backpack.strapLength.left);
-console.log("Right Strap after: ", backpack.strapLength.right);
+console.log("Kristy's bike: ", kristyBike);
+
+kristyBike.paint("Coral Pink");
+console.log("Kristy's painted bike: ", kristyBike);

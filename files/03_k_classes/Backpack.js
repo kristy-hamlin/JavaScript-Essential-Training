@@ -13,9 +13,25 @@ class Backpack {
   //using the "constructor" keyword. We will put all the inputs
   //on separate lines for legibility.
 
-  constructor(name, volume, leftStrap, RightStrap, lidOpen) {
+  constructor(name, volume, leftStrap, rightStrap, lidOpen) {
     //Inside the curly brackets, give the code for how we
     //want the object to be setup using the constructor inputs:
+    this.name = name;
+    this.volume = volume;
+    (this.strapLength = {
+      left: leftStrap,
+      right: rightStrap,
+    }),
+      (this.lidOpen = lidOpen);
+  }
+  //After the constructor, you can add methods like before.
+  toggleLid(lidStatus) {
+    this.lidOpen = lidStatus;
+  }
+
+  newStrapLength(leftLength, rightLength) {
+    this.strapLength.left = leftLength;
+    this.strapLength.right = rightLength;
   }
 }
 
